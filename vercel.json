@@ -1,11 +1,43 @@
 {
   "version": 2,
-  "framework": null,
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "functions": {
-    "api/*.ts": {
-      "runtime": "@vercel/node@3"
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "app/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/*.ts",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/_app/(.*)",
+      "dest": "/app/_app/$1"
+    },
+    {
+      "src": "/icons/(.*)",
+      "dest": "/app/icons/$1"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/app/manifest.json"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/app/robots.txt"
+    },
+    {
+      "src": "/app/(.*)",
+      "dest": "/app/$1"
+    },
+    {
+      "src": "/app",
+      "dest": "/app/index.html"
+    }
+  ]
 }
