@@ -1,0 +1,1 @@
+export const env={"PUBLIC_GOOGLE_CLIENT_ID":"341090396774-ikenan91a247k0q9oq008r46l86r3ep5.apps.googleusercontent.com"}
