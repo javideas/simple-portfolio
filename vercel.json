@@ -32,12 +32,13 @@
       "dest": "/app/robots.txt"
     },
     {
-      "src": "/app/(.*)",
-      "dest": "/app/$1"
+      "src": "/app",
+      "status": 308,
+      "headers": { "Location": "/app/" }
     },
     {
-      "src": "/app",
-      "dest": "/app/index.html"
+      "src": "/app/(.*)",
+      "dest": "/app/$1"
     }
   ]
 }
